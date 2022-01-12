@@ -1,17 +1,18 @@
 package characters.playercharacters;
 
-import attackforms.CyberType;
+import characteritems.CyberType;
 import characters.Character;
-import defencebots.Bot;
 import defencebots.BotType;
 
 public class CyberPunk extends Character {
 
+    CyberPunkType cyberpunktype;
     CyberType cyberType;
     BotType botType;
 
-    public CyberPunk(String name, int health, CyberType cyberType, BotType botType) {
+    public CyberPunk(String name, int health, CyberPunkType cyberpunktype, CyberType cyberType, BotType botType) {
         super(name, health);
+        this.cyberpunktype = cyberpunktype;
         this.cyberType = cyberType;
         this.botType = botType;
     }
@@ -24,4 +25,7 @@ public class CyberPunk extends Character {
         return this.botType;
     }
 
+    public CyberPunkType getCyberPunkType(){
+        return this.cyberpunktype;
+    }
 }

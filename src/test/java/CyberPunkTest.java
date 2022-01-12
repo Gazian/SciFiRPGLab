@@ -1,5 +1,6 @@
-import attackforms.CyberType;
+import characteritems.CyberType;
 import characters.playercharacters.CyberPunk;
+import characters.playercharacters.CyberPunkType;
 import defencebots.BotType;
 import org.junit.Before;
 import org.junit.Test;
@@ -9,11 +10,10 @@ import static org.junit.Assert.assertEquals;
 public class CyberPunkTest {
 
     CyberPunk cyberpunk;
-    Character character;
 
     @Before
     public void before() {
-        cyberpunk = new CyberPunk( "Neo",200, CyberType.SHIELDOVERLOAD, BotType.FLAMEDRONE);
+        cyberpunk = new CyberPunk( "Neo",200, CyberPunkType.HACKER ,CyberType.SHIELDOVERLOAD, BotType.FLAMEDRONE);
     }
 
     @Test
@@ -28,9 +28,14 @@ public class CyberPunkTest {
     }
 
     @Test
-    public void checkType(){
+    public void hasCyberPunkType(){
+        assertEquals(CyberPunkType.HACKER, cyberpunk.getCyberPunkType());
+    }
+    @Test
+    public void checkCyberType(){
         assertEquals(CyberType.SHIELDOVERLOAD,cyberpunk.getCyberType());
     }
+
 
     @Test
     public void checkBotType(){
